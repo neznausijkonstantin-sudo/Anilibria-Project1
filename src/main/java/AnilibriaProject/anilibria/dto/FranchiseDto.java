@@ -1,4 +1,4 @@
-package anilibria.dto;
+package AnilibriaProject.anilibria.dto;
 
 /*
  * DTO для одной франшизы из внешнего Anilibria/Aniliberty API.
