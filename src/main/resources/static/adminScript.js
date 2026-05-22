@@ -1,3 +1,46 @@
+// Получение CSRF токена из cookie
+function getCsrfToken() {
+    const name = 'XSRF-TOKEN';
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+    }
+    return '';
+}
+
+// Заголовки для AJAX запросов
+function getHeaders() {
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+    const token = getCsrfToken();
+    if (token) {
+        headers['X-XSRF-TOKEN'] = token;
+    }
+    return headers;
+}
+
+// Проверка что пользователь залогинен
+async function checkAuth() {
+    try {
+        const response = await fetch('/admin/auth', {
+            credentials: 'include'
+        });
+        if (!response.ok) {
+            window.location.href = '/login';
+            return false;
+        }
+        return true;
+    } catch (e) {
+        window.location.href = '/login';
+        return false;
+    }
+}
+
+
 // Достает CSRF-токен из cookie XSRF-TOKEN.
 // Spring Security требует этот токен для небезопасных запросов: POST/PATCH/DELETE.
 function getCsrfToken() {
