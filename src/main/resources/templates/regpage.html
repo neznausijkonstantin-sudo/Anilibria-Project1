@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Regpage</title>
+</head>
+<body>
+
+
+
+<div class="row justify-content-md-center">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ☰
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLin">
+                    <a class="dropdown-item" href="#">Home</a>
+                    <h6 class="dropdown-header">Public</h6>
+                    <a class="dropdown-item" href="#">Questions</a>
+                    <a class="dropdown-item" href="#">Users</a>
+                    <a class="dropdown-item" href="#">Companies</a>
+                    <h6 class="dropdown-header">Collectives</h6>
+                    <a class="dropdown-item" href="#">Explore Collective</a>
+                    <h6 class="dropdown-header">Teams</h6>
+                    <div class="container"><p><small><strong>Stack Overflow for Teams</strong> – Start collaborating and sharing organizational knowledge.</small></p></div>
+                    <button class="btn btn-warning mr-sm-2" type="submit">Create a free Team</button>
+                    <a class="dropdown-item" href="#">Why Teams?</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Stack<strong>overflow</strong> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Stack Overflow<br><small>Public questions & answers</small></a>
+                    <a class="dropdown-item" href="#">Stack Overflow for Teams<br><small>Where developers & technologists share private knowledge with coworkers</small></a>
+                    <a class="dropdown-item" href="#">Talent<br><small>Build your employer brand</small></a>
+                    <a class="dropdown-item" href="#">Advertising<br><small>Reach developers & technologists worldwide</small></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">About the company</a>
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">For Teams</a>
+            </li>
+            <li >
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" style="width: 700px" type="search" placeholder="Search..." aria-label="Search">
+                </form>
+            </li>
+            <li>
+                <button class="btn btn-outline-primary mr-sm-2" type="submit">Log in</button>
+            </li>
+            <li>
+                <button class="btn btn-primary mr-sm-2" type="submit">Sing up</button>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container-fluid  text-center bg-light" style="height: 100vh">
+    <br>
+    <div class="row justify-content-md-center align-items-center">
+        <div class="col-4 text-right">
+            <div class="container text-left">
+                <h4>
+                    Join the Stack Overflow community
+                </h4>
+                <br>
+                <span>
+        Get unstuck — ask a question
+      </span>
+                <br>
+                <br>
+                <span>
+        Unlock new privileges like voting and commenting
+      </span>
+                <br>
+                <br>
+                <span>
+        Save your favorite questions, answers, watch tags, and more
+      </span>
+                <br>
+                <br>
+                <span>
+        Earn reputation and badges
+      </span>
+                <br>
+                <br>
+                <p><small>Collaborate and share knowledge with a private group for FREE.<br>
+                    <a href="#">Get Stack Overflow for Teams free for up to 50 users.</a></small></p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card text-left">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label"
+                               for="editName"><strong>Display name</strong></label>
+                        <input class="form-control" name="username"
+                               type="text" id="editName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"
+                               for="editHobby"><strong>Email</strong></label>
+                        <input class="form-control" name="hobby"
+                               type="text" id="editHobby"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label"
+                               for="editPassword"><strong>Password</strong></label>
+                        <input class="form-control" name="password"
+                               type="password" id="editPassword"/>
+                    </div>
+                    <p><small>
+                        Passwords must contain at least eight characters, including at least 1 letter and 1 number.
+                    </small></p>
+                    <button class="btn btn-primary w-100" type="submit">Sing up</button>
+                    <p><small>
+                        By clicking “Sign up”, you agree to our <a href="#">terms of service</a> and acknowledge that you have read and understand our <a href="#">privacy policy</a> and <a href="#">code of conduct.</a>
+                    </small></p>
+                </div>
+            </div>
+            <p><small>Already have an account? <a href="#">Log in</a></small></p>
+            <p><small>Are you an employer? <a href="#">Sign up on Talent</a></small></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
