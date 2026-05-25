@@ -34,7 +34,7 @@ PowerShell.
 
 cd C:\Users\Admin\Desktop\проект\demo>
 .\mvnw.cmd -DskipTests package
-Если локальный Maven cache в C:\Users\Razahan\.m2 дает ошибки доступа, можно собрать с cache внутри проекта:
+Если локальный Maven cache дает ошибки доступа, можно собрать с cache внутри проекта:
 
 .\mvnw.cmd "-Dmaven.repo.local=.maven-repo" -DskipTests package
 После этого запустить контейнеры из корня проекта:
