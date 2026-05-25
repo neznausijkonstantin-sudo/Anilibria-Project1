@@ -13,13 +13,12 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 
 /*
- * Конфигурация Spring Security.
- *
- * Здесь описано:
- * - какие URL доступны каким ролям;
- * - как работает login/logout;
- * - чем кодировать пароли;
- * - откуда Spring Security должен брать пользователя при входе.
+ Конфигурация Spring Security.
+ Здесь описано:
+ какие URL доступны каким ролям;
+ как работает login/logout;
+ чем кодировать пароли;
+ откуда Spring Security должен брать пользователя при входе.
  */
 @Configuration
 @EnableWebSecurity
@@ -36,9 +35,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 /*
-                 * CSRF-защита включена. Токен кладется в cookie XSRF-TOKEN,
-                 * а JavaScript отправляет его обратно в заголовке X-XSRF-TOKEN
-                 * для POST/PATCH/DELETE запросов.
+                 CSRF-защита включена. Токен кладется в cookie XSRF-TOKEN,
+                 а JavaScript отправляет его обратно в заголовке X-XSRF-TOKEN
+                 для POST/PATCH/DELETE запросов.
                  */
                 .csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
@@ -59,8 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /*
-     * BCryptPasswordEncoder хранит пароли безопасно: в базе лежит hash,
-     * а не исходный пароль.
+     BCryptPasswordEncoder хранит пароли безопасно: в базе лежит hash,
+     а не исходный пароль.
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -68,9 +67,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /*
-     * DaoAuthenticationProvider говорит Spring Security:
-     * - пользователей ищи через userService;
-     * - пароли сравнивай через passwordEncoder.
+     DaoAuthenticationProvider говорит Spring Security:
+     пользователей ищи через userService;
+     пароли сравнивай через passwordEncoder.
      */
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {

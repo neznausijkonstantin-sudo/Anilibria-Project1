@@ -6,10 +6,9 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /*
- * Entity-класс роли пользователя.
- *
- * Роли используются Spring Security как права доступа. Например:
- * ROLE_USER дает доступ к /user/**, ROLE_ADMIN дает доступ к /admin/**.
+ Entity-класс роли пользователя.
+ Роли используются Spring Security как права доступа. Например:
+ ROLE_USER дает доступ к /user/**, ROLE_ADMIN дает доступ к /admin/**.
  */
 @Entity
 @Table(name = "roles")
@@ -25,10 +24,10 @@ public class Role implements GrantedAuthority {
     private String name;
 
     /*
-     * Обратная ссылка на пользователей с этой ролью.
-     * @Transient говорит JPA не сохранять это поле как отдельную колонку.
-     * В текущей логике проекта это поле почти не используется, основная связь
-     * описана на стороне User.roles.
+     Обратная ссылка на пользователей с этой ролью.
+     @Transient говорит JPA не сохранять это поле как отдельную колонку.
+     В текущей логике проекта это поле почти не используется, основная связь
+     описана на стороне User.roles.
      */
     @Transient
     @ManyToMany(mappedBy = "roles")
@@ -71,8 +70,8 @@ public class Role implements GrantedAuthority {
     }
 
     /*
-     * Метод интерфейса GrantedAuthority.
-     * Spring Security вызывает его и получает строку роли.
+     Метод интерфейса GrantedAuthority.
+     Spring Security вызывает его и получает строку роли.
      */
     @Override
     public String getAuthority() {

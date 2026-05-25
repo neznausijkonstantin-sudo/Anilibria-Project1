@@ -1,5 +1,4 @@
 package baza.configs;
-
 import baza.model.User;
 import baza.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,15 +8,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import baza.model.Role;
 import baza.repository.UserRepository;
-
 import java.util.List;
 
 /*
- * Инициализатор стартовых данных.
- *
- * CommandLineRunner запускается один раз при старте приложения.
- * Этот класс гарантирует, что в базе есть роли ROLE_USER / ROLE_ADMIN
- * и стартовый администратор.
+ Инициализатор стартовых данных.
+ CommandLineRunner запускается один раз при старте приложения.
+ Этот класс гарантирует, что в базе есть роли ROLE_USER / ROLE_ADMIN
+ и стартовый администратор.
  */
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -29,10 +26,10 @@ public class DataInitializer implements CommandLineRunner {
     private final String adminHobby;
 
     /*
-     * @Value берет настройки из application.properties или переменных окружения.
-     * Например APP_INIT_ADMIN_USERNAME в docker-compose.yml попадет сюда как
-     * app.init.admin.username.
-     */
+   @Value берет настройки из application.properties или переменных окружения.
+    Например APP_INIT_ADMIN_USERNAME в docker-compose.yml попадет сюда как
+    app.init.admin.username.
+    */
     public DataInitializer(RoleRepository roleRepository,
                            UserRepository userRepository,
                            PasswordEncoder passwordEncoder,

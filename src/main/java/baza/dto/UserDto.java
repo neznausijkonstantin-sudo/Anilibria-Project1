@@ -6,10 +6,9 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 /*
- * DTO пользователя для ответа API.
- *
- * DTO нужен, чтобы не отдавать frontend полную Entity User.
- * В User есть password, а пароль нельзя отправлять в браузер даже в виде hash.
+ DTO пользователя для ответа API.
+ DTO нужен, чтобы не отдавать frontend полную Entity User.
+ В User есть password, а пароль нельзя отправлять в браузер даже в виде hash.
  */
 public class UserDto {
     private Long id;

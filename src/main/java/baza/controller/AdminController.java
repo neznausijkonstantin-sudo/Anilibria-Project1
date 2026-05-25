@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
- * REST-контроллер админской части.
- *
- * Он принимает HTTP-запросы с frontend-страницы admin.html/adminScript.js
- * и возвращает JSON или HTTP-статус. Доступ к этим URL разрешен только
- * пользователям с ролью ADMIN в WebSecurityConfig.
+ REST-контроллер админской части.
+ Он принимает HTTP-запросы с frontend-страницы admin.html/adminScript.js
+ и возвращает JSON или HTTP-статус. Доступ к этим URL разрешен только
+ пользователям с ролью ADMIN в WebSecurityConfig.
  */
 @RestController
 @RequestMapping("/admin")

@@ -3,10 +3,9 @@ package baza.dto;
 import baza.model.Role;
 
 /*
- * DTO роли для ответа API.
- *
- * Frontend использует name/authority, чтобы показать роли пользователя
- * и корректно отправлять роли при создании или редактировании.
+ DTO роли для ответа API.
+ Frontend использует name/authority, чтобы показать роли пользователя
+ и корректно отправлять роли при создании или редактировании.
  */
 public class RoleDto {
     private Long id;

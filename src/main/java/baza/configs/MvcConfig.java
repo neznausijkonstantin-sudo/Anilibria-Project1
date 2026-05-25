@@ -5,11 +5,10 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /*
- * Простая MVC-настройка для HTML-страниц.
- *
- * Здесь мы связываем URL со страницами из src/main/resources/templates.
- * Для этих страниц не нужен отдельный Controller, потому что они просто
- * возвращают HTML, а данные потом догружаются через JavaScript.
+ Простая MVC-настройка для HTML-страниц.
+ Здесь мы связываем URL со страницами из src/main/resources/templates.
+ Для этих страниц не нужен отдельный Controller, потому что они просто
+ возвращают HTML, а данные потом догружаются через JavaScript.
  */
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {

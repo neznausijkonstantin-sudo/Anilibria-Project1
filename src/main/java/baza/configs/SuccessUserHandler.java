@@ -12,11 +12,10 @@ import java.io.IOException;
 import java.util.Set;
 
 /*
- * Обработчик успешной авторизации.
- *
- * Spring Security вызывает этот класс после правильного логина и пароля.
- * Здесь мы решаем, куда отправить пользователя: админа в /admin,
- * обычного пользователя в /user.
+ Обработчик успешной авторизации.
+ Spring Security вызывает этот класс после правильного логина и пароля.
+ Здесь мы решаем, куда отправить пользователя: админа в /admin,
+ обычного пользователя в /user.
  */
 @Component
 public class SuccessUserHandler implements AuthenticationSuccessHandler {

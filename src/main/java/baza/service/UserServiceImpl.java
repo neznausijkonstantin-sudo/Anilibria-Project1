@@ -15,11 +15,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
- * Сервисный слой для пользователей.
- *
- * Контроллеры вызывают этот класс, когда нужно создать, обновить,
- * удалить или найти пользователя. Здесь держится бизнес-логика:
- * кодирование пароля, подстановка ролей из базы, транзакции.
+ Сервисный слой для пользователей.
+ Контроллеры вызывают этот класс, когда нужно создать, обновить,
+ удалить или найти пользователя. Здесь держится бизнес-логика:
+ кодирование пароля, подстановка ролей из базы, транзакции.
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -29,10 +28,9 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     /*
-     * Constructor injection: Spring сам передает сюда нужные зависимости.
-     *
-     * @Lazy у passwordEncoder нужен, чтобы избежать циклической зависимости
-     * между security-конфигом и сервисом пользователей.
+     Constructor injection: Spring сам передает сюда нужные зависимости.
+     @Lazy у passwordEncoder нужен, чтобы избежать циклической зависимости
+     между security-конфигом и сервисом пользователей.
      */
     public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, @Lazy PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
@@ -47,8 +45,8 @@ public class UserServiceImpl implements UserService {
     }
 
     /*
-     * Метод из UserDetailsService.
-     * Spring Security вызывает его во время авторизации пользователя.
+     Метод из UserDetailsService.
+     Spring Security вызывает его во время авторизации пользователя.
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -60,10 +58,9 @@ public class UserServiceImpl implements UserService {
     }
 
     /*
-     * Создание пользователя.
-     *
-     * @Transactional означает: все операции с БД внутри метода выполняются
-     * как одна транзакция. Если что-то упадет, изменения откатятся.
+     Создание пользователя.
+     @Transactional означает: все операции с БД внутри метода выполняются
+     как одна транзакция. Если что-то упадет, изменения откатятся.
      */
     @Transactional
     @Override
@@ -96,9 +93,9 @@ public class UserServiceImpl implements UserService {
     }
 
     /*
-     * Обновление пользователя.
-     * Если пароль в форме оставили пустым, сохраняем старый hash пароля.
-     * Если пароль ввели, кодируем новый пароль.
+     Обновление пользователя.
+     Если пароль в форме оставили пустым, сохраняем старый hash пароля.
+     Если пароль ввели, кодируем новый пароль.
      */
     @Transactional
     @Override
@@ -113,10 +110,9 @@ public class UserServiceImpl implements UserService {
     }
 
     /*
-     * Преобразует роли из запроса в роли из базы данных.
-     *
-     * Это важно: если сохранить "новые" Role-объекты из JSON напрямую,
-     * Hibernate может попытаться создать лишние записи или получить конфликт.
+     Преобразует роли из запроса в роли из базы данных.
+     Это важно: если сохранить "новые" Role-объекты из JSON напрямую,
+     Hibernate может попытаться создать лишние записи или получить конфликт.
      */
     private List<Role> resolveRoles(Collection<Role> roles) {
         return roles.stream()

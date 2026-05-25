@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import baza.dto.UserDto;
 
 /*
- * REST-контроллер пользовательской части.
- *
- * Здесь лежат API, доступные обычному пользователю и админу:
- * получение текущего пользователя и скачивание Excel-отчета.
+ REST-контроллер пользовательской части.
+ Здесь лежат API, доступные обычному пользователю и админу:
+ получение текущего пользователя и скачивание Excel-отчета.
  */
 @RestController
 @RequestMapping("/user")
@@ -36,10 +35,9 @@ public class UserController {
     }
 
     /*
-     * GET /user/franchises?year=2026
-     *
-     * Возвращает Excel-файл как массив байтов. Заголовок CONTENT_DISPOSITION
-     * говорит браузеру скачать файл, а contentType сообщает, что это .xlsx.
+     GET /user/franchises?year=2026
+     Возвращает Excel-файл как массив байтов. Заголовок CONTENT_DISPOSITION
+     говорит браузеру скачать файл, а contentType сообщает, что это .xlsx.
      */
     @GetMapping("/franchises")
     public ResponseEntity<byte[]> getFranchisesByYear(@RequestParam Integer year) {
