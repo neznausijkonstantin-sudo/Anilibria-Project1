@@ -1,4 +1,3 @@
-Spring Boot приложение с авторизацией, админ-панелью для управления пользователями и выгрузкой Excel-отчета по франшизам Anilibria.
 
 Что умеет проект
 Авторизация через Spring Security.
@@ -33,7 +32,7 @@ PowerShell.
 Сначала нужно собрать jar-файл приложения:
 
 cd C:\Users\Admin\Desktop\проект\demo>
-.\mvnw.cmd -DskipTests package
+.\mvnw package -DskipTests              отчистить если какие то проблемы .\mvnw clean
 Если локальный Maven cache дает ошибки доступа, можно собрать с cache внутри проекта:
 
 .\mvnw.cmd "-Dmaven.repo.local=.maven-repo" -DskipTests package
