@@ -41,7 +41,7 @@ async function checkAuth() {
 }
 
 
-// Достает CSRF-токен из cookie XSRF-TOKEN.
+-// Достает CSRF-токен из cookie XSRF-TOKEN.
 // Spring Security требует этот токен для небезопасных запросов: POST/PATCH/DELETE.
 function getCsrfToken() {
     const match = document.cookie.match(new RegExp('(^| )XSRF-TOKEN=([^;]+)'))
